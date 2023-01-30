@@ -1,0 +1,29 @@
+<p> 
+<a href ="{% url 'parking:parking' %}"> Парковка</a>
+    
+{% comment %} <a href = "parking/"> Парковка </a>  {% endcomment %}
+
+{% block content %}{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <p>
+    Добавить машину:
+</p>
+<form href = "new_parkin/" method='post'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button name="submit">Добавить</button>
+</form>
+</p> {% endcomment %}
