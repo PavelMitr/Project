@@ -1,0 +1,16 @@
+{% extends "parking/base.html" %}
+
+{% block content %}
+<p>Опа гости:</p>
+
+    <form 
+    action="{% url 'parking:new_park' %}" method='POST'>
+        {% csrf_token %}   
+        {{form.as_p}}
+
+    <button name="submit">Добавить машину</button>
+    </form>
+
+{% endblock content %}
+
+

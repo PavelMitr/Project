@@ -22,25 +22,10 @@ class Car(models.Model):
 
 class Parking(models.Model):
     car = models.ForeignKey(Car, verbose_name=("Модель авто"), on_delete=models.CASCADE)
-    driver_id = models.ForeignKey(Driver, verbose_name=("Собственик"), on_delete=models.CASCADE)
+    driver_id = models.ForeignKey(Driver, verbose_name=("Клиент"), on_delete=models.CASCADE)
     free_place = models.PositiveIntegerField()
     time_start = models.DateTimeField(auto_now_add = True)
     time_stop =  models.DateTimeField(auto_now_add = True) 
-    
-    
-    # def __str__(self):
-    #     return self.id
+    def __str__(self):
+        return f"{self.car.model}  цвет:{self.car.color}   Водитель:{self.driver_id.name}"
 
-# class Pizza(models.Model):
-#     name = models.CharField(max_length=200)
-#     date_added = models.DateTimeField(auto_now_add=True)
-#     def __str__(self):
-        
-#         return self.text
-
-# class Topping(models.Model):
-       
-#     pizza = models.ForeignKey(Pizza, on_delete = models.CASCADE)
-#     name= models.TextField()
-#     date_added = models.DateTimeField(auto_now_add = True)
-    

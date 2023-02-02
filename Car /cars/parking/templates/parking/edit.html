@@ -1,0 +1,16 @@
+{% extends "parking/base.html" %}
+
+{% block content %}
+
+    <form 
+    action="{% url 'parking:edit_park' pk=pk %}" method='post'>
+
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        
+    <button name="submit">Сохранить</button>
+    </form>
+
+{% endblock content %}
